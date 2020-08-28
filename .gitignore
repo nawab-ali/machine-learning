@@ -1,0 +1,6 @@
+*.o
+a.out
+.nfs*
+*.pyc
+archive/
+__pycache__/
