@@ -1,4 +1,4 @@
-#!/home/ubuntu/wspace-2/anaconda2/bin/python
+#!/home/ubuntu/anaconda3/envs/tensorflow_p36/bin/python
 
 """
 Train and evaluate an MLP on the Reuters newswire topic classification task.
@@ -58,8 +58,8 @@ def main():
     loss, accuracy = mlp_model.evaluate(x_test, y_test, batch_size=batch_size,
                                         verbose=1)
 
-    print 'Loss: ', '{:.4f}'.format(loss)
-    print 'Accuracy: ', '{:.4f}'.format(accuracy)
+    print('Loss: ', '{:.4f}'.format(loss))
+    print('Accuracy: ', '{:.4f}'.format(accuracy))
 
 if __name__ == '__main__':
     main()

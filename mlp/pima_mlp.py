@@ -1,4 +1,4 @@
-#!/home/ubuntu/wspace-2/anaconda2/bin/python
+#!/home/ubuntu/anaconda3/envs/tensorflow_p36/bin/python
 
 """ Pima Indians onset of diabetes binary classification problem. """
 
@@ -40,14 +40,14 @@ def main():
 
     # Evaluate the model
     loss, accuracy = mlp_model.evaluate(X, Y)
-    print 'Training Loss: ', '{:.4f}'.format(loss)
-    print 'Training Accuracy: ', '{:.4f}'.format(accuracy)
+    print('Training Loss: ', '{:.4f}'.format(loss))
+    print('Training Accuracy: ', '{:.4f}'.format(accuracy))
 
     # Make predictions
     probabilities = mlp_model.predict(X)
-    predictions = [float(round(x)) for x in probabilities]
+    predictions = [float(np.round(x)) for x in probabilities]
     accuracy = np.mean(predictions == Y)
-    print 'Inference Accuracy: ', '{:.4f}'.format(accuracy)
+    print('Inference Accuracy: ', '{:.4f}'.format(accuracy))
 
 if __name__ == '__main__':
     main()
