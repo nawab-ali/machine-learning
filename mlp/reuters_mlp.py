@@ -15,7 +15,7 @@ num_epochs = 10
 batch_size = 32
 max_words = 1000
 
-def processData():
+def process_data():
     """ Pre-process the Reuters data. """
 
     (x_train,y_train), (x_test,y_test) = reuters.load_data(num_words=max_words,
@@ -36,27 +36,27 @@ def processData():
 def model(num_classes):
     """ Create the MLP model. """
 
-    mlpModel = Sequential()
-    mlpModel.add(Dense(512, input_shape=(max_words,), activation='relu'))
-    mlpModel.add(Dropout(0.5))
-    mlpModel.add(Dense(num_classes, activation='softmax'))
+    mlp_model = Sequential()
+    mlp_model.add(Dense(512, input_shape=(max_words,), activation='relu'))
+    mlp_model.add(Dropout(0.5))
+    mlp_model.add(Dense(num_classes, activation='softmax'))
 
-    return mlpModel
+    return mlp_model
 
 def main():
     # Pre-process the Reuters data
-    x_train, y_train, x_test, y_test, num_classes = processData()
+    x_train, y_train, x_test, y_test, num_classes = process_data()
 
     # Train the model
-    mlpModel = model(num_classes)
-    mlpModel.compile(loss='categorical_crossentropy', optimizer='adam',
-                     metrics=['accuracy'])
-    mlpModel.fit(x_train, y_train, epochs=num_epochs, batch_size=batch_size,
-                 verbose=1, validation_split=0.1)
+    mlp_model = model(num_classes)
+    mlp_model.compile(loss='categorical_crossentropy', optimizer='adam',
+                      metrics=['accuracy'])
+    mlp_model.fit(x_train, y_train, epochs=num_epochs, batch_size=batch_size,
+                  verbose=1, validation_split=0.1)
 
     # Evaluate the model
-    loss, accuracy = mlpModel.evaluate(x_test, y_test, batch_size=batch_size,
-                                       verbose=1)
+    loss, accuracy = mlp_model.evaluate(x_test, y_test, batch_size=batch_size,
+                                        verbose=1)
 
     print 'Loss: ', '{:.4f}'.format(loss)
     print 'Accuracy: ', '{:.4f}'.format(accuracy)
