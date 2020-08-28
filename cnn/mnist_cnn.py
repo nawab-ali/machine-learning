@@ -1,4 +1,4 @@
-#!/home/ubuntu/wspace-2/anaconda2/bin/python
+#!/home/ubuntu/anaconda3/envs/tensorflow_p36/bin/python
 
 """ Implement a simple CNN in Keras. """
 
@@ -57,19 +57,19 @@ def main():
     X_train, Y_train, X_test, Y_test = preProcessData()
 
     # Create a CNN model
-    cnnModel = model()
+    cnn_model = model()
 
     # Compile the model
-    cnnModel.compile(loss='categorical_crossentropy', optimizer='adam',
-                     metrics=['accuracy'])
+    cnn_model.compile(loss='categorical_crossentropy', optimizer='adam',
+                      metrics=['accuracy'])
 
     # Fit the Keras model
-    cnnModel.fit(X_train, Y_train, batch_size=32, epochs=10, verbose=1)
+    cnn_model.fit(X_train, Y_train, batch_size=32, epochs=10, verbose=1)
 
     # Evaluate model on test data
-    score = cnnModel.evaluate(X_test, Y_test, verbose=0)
-    print 'Test loss: ', '{:.4f}'.format(score[0])
-    print 'Test accuracy: ', '{:.4f}'.format(score[1])
+    score = cnn_model.evaluate(X_test, Y_test, verbose=0)
+    print('Test loss: ', '{:.4f}'.format(score[0]))
+    print('Test accuracy: ', '{:.4f}'.format(score[1]))
 
 if __name__ == '__main__':
     main()
