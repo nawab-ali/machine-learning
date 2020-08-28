@@ -3,4 +3,5 @@ a.out
 .nfs*
 *.pyc
 archive/
+build/
 __pycache__/
