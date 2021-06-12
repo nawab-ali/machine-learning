@@ -1,5 +1,4 @@
-Machine Learning Projects
--------------------------
+# Machine Learning Projects
 
 1. classic_ml/kmeans - K-Means clustering algorithm
 2. cnn/face_identifier - Deep Learning model for identifying faces
