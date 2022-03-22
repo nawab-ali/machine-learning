@@ -2,6 +2,8 @@
 a.out
 .nfs*
 *.pyc
+venv/
+.idea/
 archive/
 build/
 __pycache__/
